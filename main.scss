@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
+$background:  rgba(205, 148, 238, 0.397);
+$textBackground:rgba(134, 252, 134, 0.397);
+$linkHover: rgba(232, 204, 247, 0.997);
+@mixin setTextBackground() {
+    background-color: $textBackground;
+    opacity: 0.9; 
+}
+
+body {
+    background-color: $background;
+    color: white; 
+    font-family:'Source Code Pro', sans-serif;
+    font-size: 2em;
+    transition: 300ms;
+}
+h1 {
+    display: inline;
+    @include setTextBackground();
+    font-weight: 100;
+    font-size:1.5em;
+}
+p{
+    @include setTextBackground();
+}
+a {
+    @include setTextBackground();
+    color: white;
+    text-decoration-color: rgb(129, 137, 255);
+    &:hover {
+        text-decoration-color:  transparent;
+            background-color:$linkHover;
+    }
+}
+.title {
+transition: 400ms;
+box-shadow: 5em 2.5em 2em 0.25em  rgba(255, 255, 255, 0.916);
+}
+@media (min-width: 800px) {
+    #work {
+        width: 40%;
+        position: absolute;
+        top: 3em;
+        left: 45vw;
+    }
+    #about {
+        width: 40%;
+    }
+}
